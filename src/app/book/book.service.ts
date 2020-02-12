@@ -100,7 +100,7 @@ export class BookService {
   }
 
   addBook(book: Book) {
-    this.books.push(book);
+    this.books.unshift(book);
     this.bookChanged.next(this.books.slice());
   }
 

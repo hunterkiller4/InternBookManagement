@@ -46,12 +46,19 @@ export class BookEditComponent implements OnInit {
     let bookName = '';
     let bookImageURL = '';
     let bookDescription = '';
+    let bookPrice = 0;
+    let bookAuthor = '';
+    let bookPday = Date.now();
+    let bookCday = Date.now() - 1;
 
     if (this.editMode) {
       const book = this.bookService.getBook(this.id);
       bookName = book.name;
       bookImageURL = book.imageURL;
       bookDescription = book.description;
+      bookPrice = book.price;
+      bookAuthor = book.author;
+
     }
 
     this.bookForm = new FormGroup({

@@ -1,19 +1,23 @@
-<form class="form-inline md-form mr-auto mb-4">
-  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-  <button class="btn btn-info" type="submit">Search</button>
-</form>
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Search Name" aria-label="Search Name" aria-describedby="basic-addon2">
+  <div class="input-group-append">
+    <span class="input-group-text" id="basic-addon2">Search</span>
+  </div>
+</div>
 <div class="row">
-  <div class="col-xs-12">
-    <button class="btn btn-success" (click)="onNewbook()">New book</button>
+  <div class="col">
+    <button class="btn btn-success col-3" (click)="onNewbook()">New book</button>
   </div>
 </div>
 <hr>
-<div class="row">
-  <div class="col-xs-12">
-    <app-book-item
-      *ngFor="let bookEl of books; let i = index"
-      [book]="bookEl"
-      [index]="i"></app-book-item>
-  </div>
+<div class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
+  <table class="table table-bordered table-striped mb-0">
+        <th scope="row">
+          <app-book-item
+          *ngFor="let bookEl of books; let i = index"
+          [book]="bookEl"
+          [index]="i"></app-book-item>
+        </th>
+  </table>
 </div>
 

@@ -1,20 +1,45 @@
-<div class="row">
-  <div class="col-xs-12">
-    <img
-      [src]="book.imageURL"
-      alt="{{ book.name }}"
-      class="img-responsive"
-      style="max-height: 300px;">
-  </div>
+<div class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
+  <table class="table table-bordered table-striped mb-0">
+    <tbody>
+      <tr>
+        <td colspan="2">
+          <img
+          [src]="book.imageURL"
+          alt="{{ book.name }}"
+          class="img-responsive mx-auto d-block"
+          style="max-height: 400px;">
+        </td>
+      </tr>
+      <tr>
+        <th colspan="2">{{ book.name }}</th>
+      </tr>
+      <tr>
+        <td scope="col-2">Description</td>
+        <td scope="col-10">{{ book.description }}</td>
+      </tr>
+      <tr>
+        <td scope="col-2">Price</td>
+        <td scope="col-10">{{ book.price }}</td>
+      </tr>
+      <tr>
+        <td scope="col-2">Author</td>
+        <td scope="col-10">{{ book.author }}</td>
+      </tr>
+      <tr>
+        <td scope="col-2">Public Day</td>
+        <td scope="col-10">{{ book.publicDate }}</td>
+      </tr>
+      <tr>
+        <td scope="col-2">Created Day</td>
+        <td scope="col-10">{{ book.createdDate }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+<hr>
 <div class="row">
-  <div class="col-xs-12">
-    <h1>{{ book.name }}</h1>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <div
+  <div class="col text-center">
+    <!-- <div
       class="btn-group"
       appDropdown>
       <button
@@ -23,14 +48,12 @@
         Manage Book <span class="caret"></span>
       </button>
       <ul class="dropdown-menu">
-        <li><a style="cursor: pointer;" (click)="onEditBook()">Edit book</a></li>
-        <li><a style="cursor: pointer;" (click)="onDeleteBook()">Delete book</a></li>
+        <li><a style="cursor: pointer;" (click)="onEditBook()">Edit Book</a></li>
+        <li><a style="cursor: pointer;" (click)="onDeleteBook()">Delete Book</a></li>
       </ul>
-    </div>
+    </div> -->
+    <button type="button" class="btn btn-primary" (click)="onEditBook()">Edit Book</button>
+    <button type="button" class="btn btn-danger" (click)="onDeleteBook()">Delete Book</button>
   </div>
 </div>
-<div class="row">
-  <div class="col-xs-12">
-    {{ book.description }}
-  </div>
-</div>
+
