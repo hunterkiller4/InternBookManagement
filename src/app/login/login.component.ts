@@ -31,17 +31,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.logged = true;
     if (this.loginForm.valid) {
-
-    }
-  }
-
-  onClick() {
-    switch (this.logged){
-      case true : this.router.navigate(['/book'], {relativeTo: this.route});
-                  break;
-      default : alert('a');
-      break;
-
+      this.router.navigate(['/book'], {relativeTo: this.route});
     }
   }
 }
