@@ -14,6 +14,8 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { AppRoutingModule } from './app-routing.module';
 import { BookItemComponent } from './book/book-list/book-item/book-item.component';
 import { BookService } from './book/book.service';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { BookService } from './book/book.service';
     BookEditComponent,
     BookDetailComponent,
     DropdownDirective,
-    BookItemComponent
+    BookItemComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
