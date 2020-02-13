@@ -1,0 +1,21 @@
+.row {
+  position: absolute;
+  margin: auto;
+  top: 100;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+}
+#loginContainer {
+  position: relative;
+  margin: auto;
+  top: 200px;
+  width: 100%;
+  border: darkblue;
+  border-style: outset;
+  border-radius: 15px;
+}
+.form {
+  padding: 50px 30px;
+}
