@@ -5,15 +5,17 @@ import { BookComponent } from './book/book.component';
 import { BookStartComponent } from './book/book-start/book-start.component';
 import { BookDetailComponent } from './book/book-detail/book-detail.component';
 import { BookEditComponent } from './book/book-edit/book-edit.component';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/book', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'book', component: BookComponent, children: [
     { path: '', component: BookStartComponent },
     { path: 'new', component: BookEditComponent },
     { path: ':id', component: BookDetailComponent },
     { path: ':id/edit', component: BookEditComponent },
   ] },
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({
