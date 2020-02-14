@@ -10,11 +10,12 @@
 #loginContainer {
   position: relative;
   margin: auto;
-  top: 200px;
+  top: 150px;
   width: 100%;
   border: darkblue;
   border-style: outset;
   border-radius: 15px;
+  font-weight: 600;
 }
 .form {
   padding: 50px 30px;
