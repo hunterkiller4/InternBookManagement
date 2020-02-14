@@ -37,14 +37,9 @@
           Password is required
         </span>
       </div>
-      <div class="form-check">
-        <input type="checkbox" formControlName="tc" />
-        <label class="form-check-label" for="exampleCheck1"
-          >Accept out terms and services</label
-        >
-        <div *ngIf="registerFormControl.tc.markAsTouched()">
-          Make sure the box is checked
-        </div>
+      <div class="form-group form-check">
+        <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input" (click)="checkBox()"/>
+        <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Register</button>
