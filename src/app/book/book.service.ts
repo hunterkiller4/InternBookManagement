@@ -34,60 +34,6 @@ export class BookService {
       author: 'Lan Rùa',
       publicDate: '02/2020',
       createdDate: '02/2019'
-    },
-    {
-      name: 'Bạn Đắt Giá Bao Nhiêu?',
-      description: 'Thế giới của Yêu em từ cái nhìn đầu tiên là thế giới màu hồng dịu ngọt',
-      imageURL: 'https://salt.tikicdn.com/ts/bookpreview/b8/fa/415412/files/OEBPS/Images/img239.gif',
-      price: 80000,
-      author: 'Cố Mạn',
-      publicDate: '02/2020',
-      createdDate: '10/2014'
-    },
-    {
-      name: 'Yêu Em Từ Cái Nhìn Đầu Tiên',
-      description: 'Thế giới của Yêu em từ cái nhìn đầu tiên là thế giới màu hồng dịu ngọt',
-      imageURL: 'https://salt.tikicdn.com/ts/bookpreview/b8/fa/415412/files/OEBPS/Images/img239.gif',
-      price: 80000,
-      author: 'Cố Mạn',
-      publicDate: '02/2020',
-      createdDate: '10/2014'
-    },
-    {
-      name: 'Yêu Em Từ Cái Nhìn Đầu Tiên',
-      description: 'Thế giới của Yêu em từ cái nhìn đầu tiên là thế giới màu hồng dịu ngọt',
-      imageURL: 'https://salt.tikicdn.com/ts/bookpreview/b8/fa/415412/files/OEBPS/Images/img239.gif',
-      price: 80000,
-      author: 'Cố Mạn',
-      publicDate: '02/2020',
-      createdDate: '10/2014'
-    },
-    {
-      name: 'Yêu Em Từ Cái Nhìn Đầu Tiên',
-      description: 'Thế giới của Yêu em từ cái nhìn đầu tiên là thế giới màu hồng dịu ngọt',
-      imageURL: 'https://salt.tikicdn.com/ts/bookpreview/b8/fa/415412/files/OEBPS/Images/img239.gif',
-      price: 80000,
-      author: 'Cố Mạn',
-      publicDate: '02/2020',
-      createdDate: '10/2014'
-    },
-    {
-      name: 'Yêu Em Từ Cái Nhìn Đầu Tiên',
-      description: 'Thế giới của Yêu em từ cái nhìn đầu tiên là thế giới màu hồng dịu ngọt',
-      imageURL: 'https://salt.tikicdn.com/ts/bookpreview/b8/fa/415412/files/OEBPS/Images/img239.gif',
-      price: 80000,
-      author: 'Cố Mạn',
-      publicDate: '02/2020',
-      createdDate: '10/2014'
-    },
-    {
-      name: 'Yêu Em Từ Cái Nhìn Đầu Tiên',
-      description: 'Thế giới của Yêu em từ cái nhìn đầu tiên là thế giới màu hồng dịu ngọt',
-      imageURL: 'https://salt.tikicdn.com/ts/bookpreview/b8/fa/415412/files/OEBPS/Images/img239.gif',
-      price: 80000,
-      author: 'Cố Mạn',
-      publicDate: '02/2020',
-      createdDate: '10/2014'
     }
   ];
 
