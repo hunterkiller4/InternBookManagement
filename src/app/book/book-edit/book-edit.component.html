@@ -11,7 +11,8 @@
                   type="text"
                   id="name"
                   formControlName="name"
-                  class="form-control">
+                  class="form-control"
+                />
               </div>
             </div>
           </div>
@@ -24,13 +25,18 @@
                   id="imageURL"
                   formControlName="imageURL"
                   class="form-control"
-                  #imageURL>
+                  #imageURL
+                />
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col">
-              <img [src]="imageURL.value" class="img-responsive" style="max-width: 500px;">
+              <img
+                [src]="imageURL.value"
+                class="img-responsive"
+                style="max-width: 500px;"
+              />
             </div>
           </div>
           <div class="row">
@@ -42,7 +48,8 @@
                   id="description"
                   class="form-control"
                   formControlName="description"
-                  rows="6"></textarea>
+                  rows="6"
+                ></textarea>
               </div>
             </div>
           </div>
@@ -54,7 +61,8 @@
                   type="number"
                   id="price"
                   formControlName="price"
-                  class="form-control">
+                  class="form-control"
+                />
               </div>
             </div>
           </div>
@@ -66,7 +74,8 @@
                   type="text"
                   id="author"
                   formControlName="author"
-                  class="form-control">
+                  class="form-control"
+                />
               </div>
             </div>
           </div>
@@ -78,10 +87,12 @@
                   type="date"
                   id="pday"
                   formControlName="pday"
-                  class="form-control">
+                  class="form-control"
+                />
               </div>
             </div>
-          </div><div class="row">
+          </div>
+          <div class="row">
             <div class="col">
               <div class="form-group">
                 <label for="cday">Created Day</label>
@@ -89,20 +100,30 @@
                   type="date"
                   id="cday"
                   formControlName="cday"
-                  class="form-control">
+                  class="form-control"
+                />
               </div>
             </div>
           </div>
         </table>
       </div>
-      <hr>
+      <hr />
       <div class="row text-center">
         <div class="col">
           <button
             type="submit"
             class="btn btn-success col-3"
-            [disabled]="!bookForm.valid">Save</button>
-          <button type="button" class="btn btn-danger col-3" (click)="onCancel()">Cancel</button>
+            [disabled]="!bookForm.valid"
+          >
+            Save</button
+          >||
+          <button
+            type="button"
+            class="btn btn-danger col-3"
+            (click)="onCancel()"
+          >
+            Cancel
+          </button>
         </div>
       </div>
     </form>

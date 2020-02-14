@@ -31,3 +31,12 @@
   -o-background-size: cover;
   background-size: cover;
 }
+.content {
+  height: 100%;
+  width: 50%;
+  top: 100px;
+  display: flex;
+  margin: auto;
+  position: relative;
+  margin-top: auto;
+}

@@ -4,10 +4,11 @@
       <tr>
         <td colspan="2">
           <img
-          [src]="book.imageURL"
-          alt="{{ book.name }}"
-          class="img-responsive mx-auto d-block"
-          style="max-height: 400px;">
+            [src]="book.imageURL"
+            alt="{{ book.name }}"
+            class="img-responsive mx-auto d-block"
+            style="max-height: 400px;"
+          />
         </td>
       </tr>
       <tr>
@@ -36,7 +37,7 @@
     </tbody>
   </table>
 </div>
-<hr>
+<hr />
 <div class="row">
   <div class="col text-center">
     <!-- <div
@@ -52,8 +53,11 @@
         <li><a style="cursor: pointer;" (click)="onDeleteBook()">Delete Book</a></li>
       </ul>
     </div> -->
-    <button type="button" class="btn btn-primary" (click)="onEditBook()">Edit Book</button>
-    <button type="button" class="btn btn-danger" (click)="onDeleteBook()">Delete Book</button>
+    <button type="button" class="btn btn-primary" (click)="onEditBook()">
+      Edit Book</button
+    >||
+    <button type="button" class="btn btn-danger" (click)="onDeleteBook()">
+      Delete Book
+    </button>
   </div>
 </div>
-
