@@ -1,7 +1,6 @@
 .row {
   position: absolute;
   margin: auto;
-  top: 100;
   right: 0;
   left: 0;
   width: 100%;
@@ -10,13 +9,25 @@
 #loginContainer {
   position: relative;
   margin: auto;
-  top: 150px;
   width: 100%;
-  border: darkblue;
+  border: #79bac1;
   border-style: outset;
   border-radius: 15px;
   font-weight: 600;
+  color: #512b58;
 }
 .form {
   padding: 50px 30px;
+}
+button {
+  margin-top: 20px;
+  background-color: #8559a5;
+  border-style: none;
+  padding: 5px 15px;
+  font-size: 19px;
+  border-radius: 7px;
+  color: white;
+}
+#move {
+  background-color: #a1dd70;
 }

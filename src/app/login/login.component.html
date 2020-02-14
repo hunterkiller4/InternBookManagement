@@ -2,7 +2,7 @@
   <div class="col-md-4" id="loginContainer">
     <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
+        <label for="exampleInputEmail1">Username</label>
         <input
           type="email"
           class="form-control"
@@ -38,7 +38,8 @@
         </span>
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit">Login</button> or
+        <button routerLink="/register" id="move">Register</button>
       </div>
     </form>
   </div>

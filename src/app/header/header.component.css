@@ -1,7 +1,10 @@
-.button {
-  padding: 10px;
+a {
+  font-size: 25px;
+  text-align: center;
+  color: whitesmoke;
 }
-#register {
-  background-color: #dee44b;
-  border-style: none;
+nav {
+  justify-content: center;
+  text-align: center;
+  background-color: #79bac1;
 }
