@@ -1,63 +1,114 @@
-<div class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
-  <table class="table table-bordered table-striped mb-0">
-    <tbody>
-      <tr>
-        <td colspan="2">
-          <img
-            [src]="book.imageURL"
-            alt="{{ book.name }}"
-            class="img-responsive mx-auto d-block"
-            style="max-height: 400px;"
-          />
-        </td>
-      </tr>
-      <tr>
-        <th colspan="2">{{ book.name }}</th>
-      </tr>
-      <tr>
-        <td scope="col-2">Description</td>
-        <td scope="col-10">{{ book.description }}</td>
-      </tr>
-      <tr>
-        <td scope="col-2">Price</td>
-        <td scope="col-10">{{ book.price }}</td>
-      </tr>
-      <tr>
-        <td scope="col-2">Author</td>
-        <td scope="col-10">{{ book.author }}</td>
-      </tr>
-      <tr>
-        <td scope="col-2">Public Day</td>
-        <td scope="col-10">{{ book.publicDate }}</td>
-      </tr>
-      <tr>
-        <td scope="col-2">Created Day</td>
-        <td scope="col-10">{{ book.createdDate }}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<hr />
 <div class="row">
-  <div class="col text-center">
-    <!-- <div
-      class="btn-group"
-      appDropdown>
-      <button
-        type="button"
-        class="btn btn-primary dropdown-toggle">
-        Manage Book <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu">
-        <li><a style="cursor: pointer;" (click)="onEditBook()">Edit Book</a></li>
-        <li><a style="cursor: pointer;" (click)="onDeleteBook()">Delete Book</a></li>
-      </ul>
-    </div> -->
-    <button type="button" class="btn btn-primary" (click)="onEditBook()">
-      Edit Book</button
-    >||
-    <button type="button" class="btn btn-danger" (click)="onDeleteBook()">
-      Delete Book
-    </button>
+  <div class="col">
+    <form [formGroup]="bookUpdateForm" (ngSubmit)="onSubmit()">
+      <div class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
+        <table class="table table-bordered table-striped mb-0">
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  formControlName="bookName"
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="imageURL">Image URL</label>
+                <input
+                  type="text"
+                  id="imageURL"
+                  formControlName="bookimgURL"
+                  class="form-control"
+                  #imageURL
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <img
+                [src]="imageURL.value"
+                class="img-responsive"
+                style="max-width: 500px;"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="description">Description</label>
+                <textarea
+                  type="text"
+                  id="description"
+                  class="form-control"
+                  formControlName="bookDesc"
+                  rows="6"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="price">Price</label>
+                <input
+                  type="number"
+                  id="price"
+                  formControlName="bookPrice"
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="author">Author</label>
+                <input
+                  type="text"
+                  id="author"
+                  formControlName="bookAuthor"
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="pday">Public Date</label>
+                <input
+                  type="date"
+                  id="pday"
+                  formControlName="bookPublicDate"
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="cday">Created Day</label>
+                <input
+                  type="date"
+                  id="cday"
+                  formControlName="bookCreatedDate"
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </div>
+        </table>
+      </div>
+      <hr />
+      <button type="submit" class="btn btn-primary">Update</button>
+    </form>
   </div>
 </div>

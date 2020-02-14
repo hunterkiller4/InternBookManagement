@@ -12,10 +12,10 @@ import { BookEditComponent } from './book/book-edit/book-edit.component';
 import { BookDetailComponent } from './book/book-detail/book-detail.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { AppRoutingModule } from './app-routing.module';
-import { BookItemComponent } from './book/book-list/book-item/book-item.component';
 import { BookService } from './book/book.service';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,6 @@ import { RegisterComponent } from './register/register.component';
     BookEditComponent,
     BookDetailComponent,
     DropdownDirective,
-    BookItemComponent,
     LoginComponent,
     RegisterComponent
   ],
@@ -36,7 +35,8 @@ import { RegisterComponent } from './register/register.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [BookService],
   bootstrap: [AppComponent]
