@@ -19,11 +19,7 @@
 .form {
   padding: 50px 30px;
 }
-.form-check {
-  display: inline;
-  margin-left: 0;
-  padding: 0px;
-}
+
 #notice {
   margin-left: 20px;
 }
