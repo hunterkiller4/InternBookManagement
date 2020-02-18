@@ -4,9 +4,9 @@ import { Book } from '../book.model';
 import { BookService } from '../book.service';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store/reducers';
-import { GetBooks } from 'src/app/store/actions';
 import { getBooks } from 'src/app/store/selectors/book.selectors';
 import { Observable } from 'rxjs';
+import { GetBooks, DeleteBookSuccess} from 'src/app/store/actions';
 
 @Component({
   selector: 'app-book-list',
@@ -28,13 +28,7 @@ export class BookListComponent implements OnInit {
   ngOnInit() {
     this.loadList();
     this.store.dispatch(new GetBooks());
-    // this.store.pipe(select(getBooks)).subscribe(
-    //   val => {
-    //     this.bookList = val;
-    //     console.log(this.bookList);
-    // }
-    // );
-    this.bookList$ = this.store.select(getBooks);
+    this.bookList$ = this.store.pipe(select(getBooks));
     console.log(this.bookList$);
   }
 
@@ -47,13 +41,12 @@ export class BookListComponent implements OnInit {
   }
 
   // Delete issue
-  deleteBook(book) {
-    const index = this.bookList
-      .map((x: { name: any }) => x.name)
-      .indexOf(book.name);
-    return this.bookService.deleteBook(book.id).subscribe(() => {
-      this.bookList.splice(index, 1);
-    });
+  deleteBook(id) {
+    // const index = this.BooksList.map((x: { name: any }) => x.name).indexOf(book.name);
+    // return this.bookService.deleteBook(book.id).subscribe(() => {
+    //   this.BooksList.splice(index, 1);
+    // });
+    this.store.dispatch(new DeleteBookSuccess(id));
   }
 
   onNewbook() {

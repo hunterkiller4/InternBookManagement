@@ -1,4 +1,3 @@
-import { BookEffects } from './store/effects/book.effect';
 import { appReducers } from './store/reducers/index';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';

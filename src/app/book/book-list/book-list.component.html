@@ -24,29 +24,18 @@
       <thead>
         <tr>
           <th scope="col">#</th>
+          <th scope="col">Id</th>
           <th scope="col">Name</th>
           <th scope="col">Description</th>
-          <th scope="col">Image URL</th>
-          <th scope="col">Price</th>
-          <th scope="col">Author</th>
-          <th scope="col">Public Date</th>
-          <th scope="col">Created Date</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let books of bookList$ | async; let i = index">
-            <th scope="row">{{i}}</th>
+        <tr style="cursor: pointer;" *ngFor="let books of bookList$ | async; let i = index" [routerLink]="['/book/' + books.id]">
+            <th scope="row">{{i+1}}</th>
+            <td>{{books.id}}</td>
             <td>{{books.name}}</td>
             <td>{{books.description}}</td>
-            <td>{{books.imageURL}}</td>
-            <td>{{books.price}}</td>
-            <td>{{books.author}}</td>
-            <td>{{books.publicDate}}</td>
-            <td>{{books.createdDate}}</td>
-            <td>
-                <button type="button" class="btn btn-success btn-sm move-right" [routerLink]="['/' + books.id + '/edit']">Edit</button>
-                <button type="button" class="btn btn-danger btn-sm" (click)="deleteBook(books)">Remove</button>
-            </td>
+            <button type="button" class="btn btn-danger btn-sm" (click)="deleteBook(books.id)">Remove</button>
         </tr>
       </tbody>
     </table>

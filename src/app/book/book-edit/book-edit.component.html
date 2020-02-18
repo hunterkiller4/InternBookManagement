@@ -6,11 +6,24 @@
           <div class="row">
             <div class="col">
               <div class="form-group">
+                <label for="id">ID</label>
+                <input
+                  type="number"
+                  id="id"
+                  formControlName="id"
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
                 <label for="name">Name</label>
                 <input
                   type="text"
                   id="name"
-                  formControlName="bookName"
+                  formControlName="name"
                   class="form-control"
                 />
               </div>
@@ -23,7 +36,7 @@
                 <input
                   type="text"
                   id="imageURL"
-                  formControlName="bookimgURL"
+                  formControlName="imageURL"
                   class="form-control"
                   #imageURL
                 />
@@ -47,7 +60,7 @@
                   type="text"
                   id="description"
                   class="form-control"
-                  formControlName="bookDesc"
+                  formControlName="description"
                   rows="6"
                 ></textarea>
               </div>
@@ -60,7 +73,7 @@
                 <input
                   type="number"
                   id="price"
-                  formControlName="bookPrice"
+                  formControlName="price"
                   class="form-control"
                 />
               </div>
@@ -73,7 +86,7 @@
                 <input
                   type="text"
                   id="author"
-                  formControlName="bookAuthor"
+                  formControlName="author"
                   class="form-control"
                 />
               </div>
@@ -86,7 +99,7 @@
                 <input
                   type="date"
                   id="pday"
-                  formControlName="bookPublicDate"
+                  formControlName="publicDate"
                   class="form-control"
                 />
               </div>
@@ -99,7 +112,7 @@
                 <input
                   type="date"
                   id="cday"
-                  formControlName="bookCreatedDate"
+                  formControlName="createdDate"
                   class="form-control"
                 />
               </div>

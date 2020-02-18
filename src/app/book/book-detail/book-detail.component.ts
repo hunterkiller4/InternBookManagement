@@ -3,6 +3,9 @@ import { Params, ActivatedRoute, Router } from '@angular/router';
 import { BookService } from '../book.service';
 import { Book } from '../book.model';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { UpdateBookSuccess } from 'src/app/store/actions';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/store/reducers';
 
 @Component({
   selector: 'app-book-detail',
@@ -11,7 +14,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 
 export class BookDetailComponent implements OnInit {
-  IssuesList: any = [];
+  BooksList: any = [];
   bookUpdateForm: FormGroup;
 
   ngOnInit() {
@@ -23,11 +26,13 @@ export class BookDetailComponent implements OnInit {
     public bookService: BookService,
     public fb: FormBuilder,
     private ngZone: NgZone,
-    private router: Router
+    private router: Router,
+    private store: Store<AppState>
   ) {
     const id = this.actRoute.snapshot.paramMap.get('id');
     this.bookService.getBook(id).subscribe((book) => {
       this.bookUpdateForm = this.fb.group({
+        bookId: [book.id],
         bookName: [book.name],
         bookDesc: [book.description],
         bookimgURL: [book.imageURL],
@@ -41,20 +46,18 @@ export class BookDetailComponent implements OnInit {
 
   updateForm() {
     this.bookUpdateForm = this.fb.group({
-      bookName: '',
-      bookDesc: '',
-      bookimgURL: '',
-      bookPrice: 0,
-      bookAuthor: '',
-      bookPublicDate: Date.now(),
-      bookCreatedDate: Date.now() - 1
+      id: 0,
+      name: '',
+      description: '',
+      imageURL: '',
+      price: 0,
+      author: '',
+      publicDate: Date.now(),
+      createdDate: Date.now()
     });
   }
 
   onSubmit() {
-    const id = this.actRoute.snapshot.paramMap.get('id');
-    this.bookService.updateBook(id, this.bookUpdateForm.value).subscribe(res => {
-      this.ngZone.run(() => this.router.navigateByUrl('/book'));
-    });
+    this.store.dispatch(new UpdateBookSuccess(this.bookUpdateForm.value));
+    }
   }
-}

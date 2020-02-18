@@ -25,13 +25,9 @@
     "@ngrx/store": "^6.1.0",
     "@ngrx/store-devtools": "^6.1.0",
     "bootstrap": "^4.4.1",
+    "lodash": "^4.17.15",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
-    "@ngrx/effects": "^6.1.0",
-    "@ngrx/entity": "^6.1.0",
-    "@ngrx/router-store": "^6.1.0",
-    "@ngrx/store": "^6.1.0",
-    "@ngrx/store-devtools": "^6.1.0",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
@@ -41,6 +37,7 @@
     "@angular/language-service": "~8.2.14",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/lodash": "^4.14.149",
     "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
     "jasmine-core": "~3.4.0",
