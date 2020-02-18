@@ -30,14 +30,12 @@ export const bookReducers = (
         books: action.payload
       };
     }
-
     case BookActionsType.GET_BOOKS_FAILURE: {
       return {
         ...state,
         isLoading: false
       };
     }
-
     default:
       return state;
   }
