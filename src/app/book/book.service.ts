@@ -41,12 +41,8 @@ export class BookService {
   }
 
   // GET
-  getBooks(): Observable<Book> {
-    return this.http.get<Book>(this.baseurl)
-    .pipe(
-      retry(1),
-      catchError(this.errorHandl)
-    );
+  getBooks(): Observable<any> {
+    return this.http.get<Book>(this.baseurl);
   }
 
   // PUT

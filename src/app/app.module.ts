@@ -16,6 +16,10 @@ import { BookService } from './book/book.service';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { appReducers } from './store/reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { effect } from './store/effects';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,9 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot(appReducers),
+    EffectsModule.forRoot(effect)
   ],
   providers: [BookService],
   bootstrap: [AppComponent]
