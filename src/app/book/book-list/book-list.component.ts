@@ -1,45 +1,60 @@
-import { Component, OnInit, NgZone } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { Book } from '../book.model';
-import { BookService } from '../book.service';
+import { Observable } from "rxjs";
+import { getBooks } from "./../../store/selectors/book.selector";
+import { select } from "@ngrx/store";
+import { GetBooks } from "./../../store/actions/book.action";
+import { Store } from "@ngrx/store";
+import { Component, OnInit, NgZone } from "@angular/core";
+import { Router, ActivatedRoute } from "@angular/router";
+import { Book } from "../book.model";
+import { BookService } from "../book.service";
+import { AppState } from "src/app/store/reducers";
 
 @Component({
-  selector: 'app-book-list',
-  templateUrl: './book-list.component.html',
-  styleUrls: ['./book-list.component.css']
+  selector: "app-book-list",
+  templateUrl: "./book-list.component.html",
+  styleUrls: ["./book-list.component.css"]
 })
-
 export class BookListComponent implements OnInit {
-
   bookList: any = [];
-
-
-  ngOnInit() {
-    this.loadList();
-  }
+  bookStore: any;
+  bookList$: Observable<any>;
 
   constructor(
     public bookService: BookService,
     private ngZone: NgZone,
     private router: Router,
-  ) { }
+    private store: Store<AppState>
+  ) {}
 
-   // Issues list
-   loadList() {
+  ngOnInit() {
+    //this.loadList();
+    this.store.dispatch(new GetBooks());
+    // this.store
+    //   .select(getBooks)
+    //   .pipe()
+    //   .subscribe(val => console.log(val));
+    this.bookList$ = this.store.select(getBooks);
+    console.log(this.bookList$);
+  }
+
+  // Issues list
+  loadList() {
     return this.bookService.getBooks().subscribe((books: {}) => {
       this.bookList = books;
     });
   }
 
-    // Delete issue
-    deleteBook(book) {
-      const index = this.bookList.map((x: { name: any; }) => x.name).indexOf(book.name);
-      return this.bookService.deleteBook(book.id).subscribe(() => {
-        this.bookList.splice(index, 1);
-       });
-    }
+  // Delete issue
+  deleteBook(book) {
+    const index = this.bookList
+      .map((x: { name: any }) => x.name)
+      .indexOf(book.name);
+    return this.bookService.deleteBook(book.id).subscribe(() => {
+      this.bookList.splice(index, 1);
+    });
+  }
 
   onNewbook() {
-    this.ngZone.run(() => this.router.navigateByUrl('/book/new'));
+    this.ngZone.run(() => this.router.navigateByUrl("/book/new"));
   }
 }
