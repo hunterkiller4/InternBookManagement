@@ -1,7 +1,8 @@
+import { BookEffects } from './store/effects/book.effect';
+import { appReducers } from './store/reducers/index';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -17,7 +18,6 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
-import { appReducers } from './store/reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { effect } from './store/effects';
 
@@ -47,4 +47,4 @@ import { effect } from './store/effects';
   providers: [BookService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -13,9 +13,7 @@ import { Observable } from 'rxjs';
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.css']
 })
-
 export class BookListComponent implements OnInit {
-
   bookList: any = [];
   bookstore: any;
   bookList$: Observable<any>;
@@ -48,13 +46,15 @@ export class BookListComponent implements OnInit {
     });
   }
 
-    // Delete issue
-    deleteBook(book) {
-      const index = this.bookList.map((x: { name: any; }) => x.name).indexOf(book.name);
-      return this.bookService.deleteBook(book.id).subscribe(() => {
-        this.bookList.splice(index, 1);
-       });
-    }
+  // Delete issue
+  deleteBook(book) {
+    const index = this.bookList
+      .map((x: { name: any }) => x.name)
+      .indexOf(book.name);
+    return this.bookService.deleteBook(book.id).subscribe(() => {
+      this.bookList.splice(index, 1);
+    });
+  }
 
   onNewbook() {
     this.ngZone.run(() => this.router.navigateByUrl('/book/new'));
